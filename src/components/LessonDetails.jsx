@@ -818,7 +818,7 @@ const LessonDetails = () => {
           {/* Sidebar */}
           <div className="col-xl-4">
             <div className="course-details__sidebar bg-white p-24 rounded-2xl shadow-sm">
-              <h5 className="mb-3">Overall Progress</h5>
+              {/* <h5 className="mb-3">Overall Progress</h5>
               <div className="progress mb-4" style={{ height: "10px" }}>
                 <div
                   className="progress-bar bg-success"
@@ -828,7 +828,7 @@ const LessonDetails = () => {
               <p className="text-sm text-muted mb-4">
                 {completedCount} of {totalLessons} lessons completed (
                 {overallProgress}%)
-              </p>
+              </p> */}
 
               <div
                 className="accordion common-accordion style-three"
@@ -939,17 +939,22 @@ const LessonDetails = () => {
             <div className="course-details__content pt-12 pe-12">
               {/* 🆕 Overall progress above video */}
               <div className="mb-4">
+                <div className="flex">
+
                 <h5 className="mb-2">Course Progress</h5>
+                <div className="text-muted">
+                  {completedCount}/{totalLessons} lessons completed (
+                  {overallProgress}%)
+                </div>
+                </div>
+
                 <div className="progress" style={{ height: "10px" }}>
                   <div
                     className="progress-bar bg-success"
                     style={{ width: `${overallProgress}%` }}
                   ></div>
                 </div>
-                <small className="text-muted">
-                  {completedCount}/{totalLessons} lessons completed (
-                  {overallProgress}%)
-                </small>
+                
               </div>
 
               <video
@@ -964,7 +969,7 @@ const LessonDetails = () => {
 
               <div className="mt-4 d-flex justify-content-between align-items-center">
                 <button
-                  className="btn btn-outline-secondary"
+                  className="btn btn-secondary"
                   onClick={handlePrevious}
                   disabled={activeModule === 0 && currentLessonIndex === 0}
                 >

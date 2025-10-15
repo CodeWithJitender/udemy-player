@@ -938,13 +938,16 @@ const LessonDetails = () => {
           <div className="col-xl-8">
             <div className="course-details__content pt-12 pe-12">
               {/* 🆕 Overall progress above video */}
-              <div className="mb-4">
-                <div className="flex">
+              <div className="mb-4 my-4">
+                <div className="grid grid-cols-2 py-3">
 
                 <h5 className="mb-2">Course Progress</h5>
+                <div className="text-end">
+
                 <div className="text-muted">
                   {completedCount}/{totalLessons} lessons completed (
                   {overallProgress}%)
+                </div>
                 </div>
                 </div>
 
@@ -957,7 +960,8 @@ const LessonDetails = () => {
                 
               </div>
 
-              <video
+             <div className="my-5">
+               <video
                 ref={videoRef}
                 key={currentVideo.url}
                 className="player w-100 rounded-lg"
@@ -990,6 +994,7 @@ const LessonDetails = () => {
                   Next ⏩
                 </button>
               </div>
+             </div>
             </div>
           </div>
         </div>
